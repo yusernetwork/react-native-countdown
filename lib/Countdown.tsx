@@ -50,7 +50,6 @@ export default class Countdown extends React.Component<
     } = this.props;
     this.setState({timer:Math.round((end-start)/1000)});
     this.interval = setInterval(() => {
-      console.log(start,end,this.state.timer);
       const countDownStart = start.add(1, "second");
       const then = moment(countDownStart).format("DD/MM/YYYY HH:mm:ss");
       const now = moment(end).format("DD/MM/YYYY HH:mm:ss");
