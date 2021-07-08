@@ -70,7 +70,7 @@ export default class Countdown extends React.Component<
   }
 
   componentDidUpdate() {
-    if (this.state.timer === 1) {
+    if (this.state.timer <= 1) {
       const { onCountdownOver } = this.props;
       this.setState({timer:0});
       onCountdownOver && onCountdownOver();
