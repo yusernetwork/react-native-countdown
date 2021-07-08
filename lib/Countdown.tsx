@@ -58,7 +58,7 @@ export default class Countdown extends React.Component<
         moment(then, "DD/MM/YYYY HH:mm:ss"),
       );
       const duration = moment.duration(ms);
-      const countdown = duration.format(format);
+      const countdown = duration.format(format,{trim:false});
 
       if (ms <= 0) {
         this.setState({ hours: "00", minutes: "00", seconds: "00" });
@@ -72,6 +72,7 @@ export default class Countdown extends React.Component<
   componentDidUpdate() {
     if (this.state.timer === 1) {
       const { onCountdownOver } = this.props;
+      this.setState({timer:0});
       onCountdownOver && onCountdownOver();
       clearInterval(this.interval);
       this.forceUpdate();
