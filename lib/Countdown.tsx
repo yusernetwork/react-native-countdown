@@ -48,7 +48,9 @@ export default class Countdown extends React.Component<
       end = moment(),
       format = "hh:mm:ss",
     } = this.props;
+    this.setState({timer:Math.round((end-start)/1000)});
     this.interval = setInterval(() => {
+      console.log(start,end,this.state.timer);
       const countDownStart = start.add(1, "second");
       const then = moment(countDownStart).format("DD/MM/YYYY HH:mm:ss");
       const now = moment(end).format("DD/MM/YYYY HH:mm:ss");
@@ -62,7 +64,7 @@ export default class Countdown extends React.Component<
         this.setState({ hours: "00", minutes: "00", seconds: "00" });
         clearInterval(this.interval);
       } else {
-        this.setState({ countdown: countdown });
+        this.setState({ countdown: countdown,timer: this.state.timer-1});
       }
     }, 1000);
   }
@@ -74,6 +76,7 @@ export default class Countdown extends React.Component<
       clearInterval(this.interval);
       this.forceUpdate();
     }
+    this.props.onUpdate && this.props.onUpdate(this.state.timer);
   }
 
   componentWillUnmount() {
