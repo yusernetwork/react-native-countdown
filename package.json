@@ -1,6 +1,6 @@
 {
   "name": "@freakycoder/react-native-countdown",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Moment based extremely easy to use Countdown for React Native",
   "keywords": [
     "FreakyCoder",
@@ -16,7 +16,7 @@
   "homepage": "https://www.freakycoder.com",
   "bugs": "https://github.com/WrathChaos/react-native-countdown/issues",
   "main": "./lib/Countdown.tsx",
-  "repository": "git@github.com:WrathChaos/react-native-countdown.git",
+  "repository": "git@github.com:yusernetwork/react-native-countdown.git",
   "author": "Kuray (FreakyCoder) <kurayogun@gmail.com>",
   "license": "MIT",
   "scripts": {

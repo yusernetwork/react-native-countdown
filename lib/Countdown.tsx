@@ -15,6 +15,7 @@ export interface ICountdownProps {
   textStyle?: any;
   defaultCountdown?: string;
   onCountdownOver?: () => void;
+  onUpdate?: (val) => void;
 }
 
 interface IState {
